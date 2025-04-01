@@ -1,0 +1,602 @@
+/* Global Styles */
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --accent-color: #e74c3c;
+    --text-color: #333;
+    --light-bg: #f8f9fa;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-color);
+    padding-top: 76px;
+}
+
+/* Navigation */
+.navbar {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background-color: rgba(255, 255, 255, 0.95) !important;
+}
+
+.navbar-brand {
+    font-weight: 700;
+    color: var(--primary-color) !important;
+}
+
+.nav-link {
+    color: var(--primary-color) !important;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--secondary-color) !important;
+}
+
+/* Hero Section */
+.hero-section {
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                url('https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.hero-section h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.hero-section .lead {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+/* Section Styles */
+section {
+    padding: 80px 0;
+}
+
+section h2 {
+    color: var(--primary-color);
+    margin-bottom: 3rem;
+    position: relative;
+    display: inline-block;
+}
+
+section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 3px;
+    background-color: var(--secondary-color);
+}
+
+/* About Section Specific Styles */
+#about .lead,
+#about p {
+    font-weight: 400;
+    line-height: 1.8;
+    font-size: 1.1rem;
+    color: var(--text-color);
+}
+
+/* Cards */
+.card {
+    border: none;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-title {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.card-text {
+    font-weight: 500;
+    line-height: 1.6;
+}
+
+/* Timeline */
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.timeline-item {
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.timeline-item:hover {
+    transform: translateX(10px);
+}
+
+.timeline-item h4 {
+    color: var(--primary-color);
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.timeline-item p {
+    font-weight: 500;
+    margin-bottom: 0;
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+    padding: 10px 25px;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #2980b9;
+    border-color: #2980b9;
+    transform: translateY(-2px);
+}
+
+.btn-outline-light {
+    padding: 10px 25px;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-light:hover {
+    transform: translateY(-2px);
+}
+
+/* Footer */
+footer {
+    background-color: var(--primary-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero-section .lead {
+        font-size: 1.2rem;
+    }
+    
+    section {
+        padding: 60px 0;
+    }
+    
+    .timeline-item {
+        margin-left: 20px;
+    }
+    
+    #about .lead,
+    #about p {
+        font-size: 1rem;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+}
+
+/* Parallax Effect */
+.parallax {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--light-bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--secondary-color);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #2980b9;
+}
+
+/* Map Container */
+.map-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.map-container iframe {
+    display: block;
+    width: 100%;
+    height: 450px;
+    border: none;
+}
+
+/* Time Slots Styles */
+.time-slots {
+    margin-bottom: 1rem;
+}
+
+.time-slot {
+    margin-bottom: 0.5rem;
+}
+
+.time-slot .btn {
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.time-slot .btn-check:checked + .btn {
+    background-color: var(--secondary-color);
+    color: white;
+    border-color: var(--secondary-color);
+}
+
+.time-slot .btn:hover {
+    background-color: var(--secondary-color);
+    color: white;
+    border-color: var(--secondary-color);
+}
+
+/* Appointment Form Styles */
+#appointmentForm {
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+#appointmentForm .form-label {
+    font-weight: 500;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+#appointmentForm .form-control,
+#appointmentForm .form-select {
+    border: 1px solid #ddd;
+    padding: 0.75rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+#appointmentForm .form-control:focus,
+#appointmentForm .form-select:focus {
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 0.2rem rgba(52, 152, 219, 0.25);
+}
+
+#appointmentForm textarea.form-control {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* Date Input Customization */
+#appointmentForm input[type="date"] {
+    appearance: none;
+    -webkit-appearance: none;
+    padding-right: 1rem;
+}
+
+/* Time and Type Select Customization */
+.form-select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23333' viewBox='0 0 16 16'%3E%3Cpath d='M8 11L3 6h10l-5 5z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    padding-right: 2.5rem;
+}
+
+/* Submit Button */
+#appointmentForm .btn-primary {
+    padding: 1rem 2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .map-container iframe {
+        height: 300px;
+    }
+    
+    .form-control, .form-select {
+        padding: 0.5rem;
+    }
+}
+
+/* Appointment Section Styles */
+#appointment .card {
+    border: none;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+#appointment .card:hover {
+    transform: translateY(-5px);
+}
+
+#appointment h4 {
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+#appointment h5 {
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+#appointment .clinic-hours,
+#appointment .contact-info {
+    background-color: var(--light-bg);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+}
+
+#appointment .list-unstyled li {
+    color: var(--text-color);
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+}
+
+#appointment .text-primary {
+    color: var(--secondary-color) !important;
+}
+
+#appointment .contact-info p {
+    margin-bottom: 0.75rem;
+    font-size: 1.1rem;
+    color: var(--text-color);
+}
+
+#appointment .contact-info i {
+    width: 20px;
+    text-align: center;
+    color: var(--secondary-color);
+}
+
+/* Google Calendar iframe styles */
+#appointment iframe {
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Responsive Adjustments for Appointment Section */
+@media (max-width: 768px) {
+    #appointment .card-body {
+        padding: 1rem;
+    }
+    
+    #appointment h4 {
+        font-size: 1.3rem;
+    }
+    
+    #appointment .list-unstyled li,
+    #appointment .contact-info p {
+        font-size: 1rem;
+    }
+    
+    #appointment .clinic-hours,
+    #appointment .contact-info {
+        padding: 1rem;
+    }
+    
+    #appointment iframe {
+        height: 500px;
+    }
+}
+
+@media (max-width: 576px) {
+    #appointment iframe {
+        height: 450px;
+    }
+}
+
+/* Contact Section Styles */
+#contact .card-title {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+#contact address {
+    font-style: normal;
+    margin-bottom: 1.5rem;
+}
+
+#contact address p {
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+    color: var(--text-color);
+}
+
+#contact address i {
+    color: var(--secondary-color);
+    margin-right: 0.5rem;
+    width: 20px;
+}
+
+#contact .contact-info p {
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+    color: var(--text-color);
+}
+
+#contact .contact-info i {
+    color: var(--secondary-color);
+    margin-right: 0.5rem;
+    width: 20px;
+}
+
+#contact .btn-primary {
+    margin-top: 1rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+#contact .btn-primary i {
+    font-size: 1.1rem;
+}
+
+/* Contact Section Button Styles */
+#contact .d-flex {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+#contact .btn-lg {
+    width: 200px;
+    height: 50px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+#contact .btn-lg i {
+    font-size: 1.2rem;
+}
+
+/* Responsive Adjustments for Contact Buttons */
+@media (max-width: 576px) {
+    #contact .d-flex {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.75rem;
+    }
+    
+    #contact .btn-lg {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+/* Responsive Adjustments for Contact Section */
+@media (max-width: 768px) {
+    #contact .card-title {
+        font-size: 1.3rem;
+    }
+    
+    #contact address p,
+    #contact .contact-info p {
+        font-size: 1rem;
+    }
+    
+    #contact .btn-primary {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* Calendar Container Styles */
+.calendar-container {
+    width: 100%;
+    height: 100%;
+    min-height: 600px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: relative;
+}
+
+.calendar-container iframe {
+    width: 100%;
+    height: 100%;
+    min-height: 600px;
+    border: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* Responsive Adjustments for Calendar */
+@media (max-width: 768px) {
+    .calendar-container {
+        min-height: 800px;
+        margin-top: 1rem;
+    }
+    
+    .calendar-container iframe {
+        min-height: 800px;
+    }
+    
+    #appointment .card-body {
+        padding: 1rem;
+    }
+    
+    #appointment .col-md-4 {
+        margin-bottom: 1.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .calendar-container {
+        min-height: 700px;
+    }
+    
+    .calendar-container iframe {
+        min-height: 700px;
+    }
+    
+    #appointment h4 {
+        font-size: 1.3rem;
+    }
+    
+    #appointment .list-unstyled li {
+        font-size: 0.95rem;
+    }
+} 
