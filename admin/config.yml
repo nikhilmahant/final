@@ -1,15 +1,18 @@
 backend:
   name: github
-  repo: <nikhilmahant>/<final>  # Example: user/website
-  branch: main  # Branch where the content is located, usually "main" or "master"
-media_folder: "static/img"  # Path to where images are stored
-public_folder: "/img"  # Public URL to access images
+  repo: nikhilmahant/final  # Make sure it's "username/repository"
+  branch: main  # The branch to use for the content, usually "main" or "master"
+
+media_folder: "static/img"  # Folder for storing media files like images
+public_folder: "/img"      # The public path where images will be accessible
+
 collections:
-  - name: "posts"  # This is where the content will be saved
-    label: "Posts"
-    folder: "content/posts"  # Folder in your repository where the posts are stored
-    create: true  # Allow creating new posts from the CMS
+  - name: "posts"  # Name of the collection (e.g., blog posts)
+    label: "Posts"  # Display name in the CMS
+    folder: "content/posts"  # Folder where the content will be saved in your repository
+    create: true  # Allow users to create new posts
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"  # Automatically generate a slug from the post title and date
     fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Publish Date", name: "date", widget: "datetime" }
-      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Title", name: "title", widget: "string" }  # Title of the post
+      - { label: "Publish Date", name: "date", widget: "datetime" }  # Date of the post
+      - { label: "Body", name: "body", widget: "markdown" }  # Main content of the post (Markdown editor)
