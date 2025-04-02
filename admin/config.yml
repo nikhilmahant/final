@@ -1,0 +1,15 @@
+backend:
+  name: github
+  repo: <nikhilmahant>/<final>  # Example: user/website
+  branch: main  # Branch where the content is located, usually "main" or "master"
+media_folder: "static/img"  # Path to where images are stored
+public_folder: "/img"  # Public URL to access images
+collections:
+  - name: "posts"  # This is where the content will be saved
+    label: "Posts"
+    folder: "content/posts"  # Folder in your repository where the posts are stored
+    create: true  # Allow creating new posts from the CMS
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Body", name: "body", widget: "markdown" }
