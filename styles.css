@@ -68,7 +68,8 @@ section h2 {
     color: var(--primary-color);
     margin-bottom: 3rem;
     position: relative;
-    display: inline-block;
+    text-align: center;
+    width: 100%;
 }
 
 section h2::after {
@@ -150,21 +151,35 @@ section h2::after {
     border-color: var(--secondary-color);
     padding: 10px 25px;
     transition: all 0.3s ease;
+    border-radius: 30px;
+    font-weight: 500;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    white-space: nowrap;
+    text-align: center;
 }
 
 .btn-primary:hover {
     background-color: #2980b9;
     border-color: #2980b9;
     transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0,0,0,0.15);
 }
 
 .btn-outline-light {
     padding: 10px 25px;
     transition: all 0.3s ease;
+    border-radius: 30px;
+    font-weight: 500;
+    border-width: 2px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    white-space: nowrap;
+    text-align: center;
 }
 
 .btn-outline-light:hover {
     transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0,0,0,0.15);
+    background-color: rgba(255,255,255,0.1);
 }
 
 /* Footer */
@@ -598,5 +613,21 @@ footer {
     
     #appointment .list-unstyled li {
         font-size: 0.95rem;
+    }
+}
+
+/* Mobile-friendly button container */
+@media (max-width: 576px) {
+    .d-flex.justify-content-center.gap-3 {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px !important;
+    }
+    
+    .btn-lg {
+        width: 100%;
+        max-width: 280px;
+        padding: 12px 20px;
+        font-size: 1rem;
     }
 } 
