@@ -143,4 +143,44 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
-}); 
+});
+
+// Mobile Installation Prompt
+let deferredPrompt;
+const installPrompt = document.getElementById('installPrompt');
+const installBtn = document.getElementById('installBtn');
+const dismissBtn = document.getElementById('dismissBtn');
+
+// Show the install prompt when the app is ready to be installed
+window.addEventListener('beforeinstallprompt', (e) => {
+    e.preventDefault();
+    deferredPrompt = e;
+    installPrompt.classList.add('visible');
+});
+
+// Handle install button click
+installBtn.addEventListener('click', async () => {
+    if (deferredPrompt) {
+        deferredPrompt.prompt();
+        const { outcome } = await deferredPrompt.userChoice;
+        if (outcome === 'accepted') {
+            console.log('User accepted the install prompt');
+        } else {
+            console.log('User dismissed the install prompt');
+        }
+        deferredPrompt = null;
+        installPrompt.classList.remove('visible');
+    }
+});
+
+// Handle dismiss button click
+dismissBtn.addEventListener('click', () => {
+    installPrompt.classList.remove('visible');
+    // Store dismissal in localStorage to prevent showing again
+    localStorage.setItem('installPromptDismissed', 'true');
+});
+
+// Check if user has already dismissed the prompt
+if (localStorage.getItem('installPromptDismissed') === 'true') {
+    installPrompt.classList.remove('visible');
+} 
