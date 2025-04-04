@@ -758,20 +758,31 @@ footer {
 
 .doctor-image-container {
     position: relative;
-    max-width: 400px;
+    width: 400px;
+    height: 400px;
     margin: 0 auto;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    border-radius: 10px;
 }
 
 .doctor-image {
     width: 100%;
-    height: auto;
-    border: 5px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    height: 100%;
+    object-fit: cover;
     transition: transform 0.3s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 10px;
 }
 
 .doctor-image:hover {
-    transform: scale(1.02);
+    transform: scale(1.05);
 }
 
 /* Responsive adjustments for hero section */
@@ -783,7 +794,8 @@ footer {
     }
     
     .doctor-image-container {
-        max-width: 300px;
+        width: 300px;
+        height: 300px;
         margin: 40px auto 0;
     }
 }
@@ -798,7 +810,8 @@ footer {
     }
     
     .doctor-image-container {
-        max-width: 250px;
+        width: 250px;
+        height: 250px;
     }
 }
 
@@ -815,6 +828,7 @@ footer {
     }
     
     .doctor-image-container {
-        max-width: 200px;
+        width: 200px;
+        height: 200px;
     }
 } 
